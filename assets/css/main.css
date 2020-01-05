@@ -3285,12 +3285,22 @@
     padding-top: 20px;
     margin-bottom: 10px;
   }
-  .top-sales{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 10px;
-    height:auto;
+  @media (max-width: 988px) {
+    .top-sales{
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-row-gap: 10px;
+    }
   }
+  @media (min-width: 988px) {
+    .top-sales{
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-column-gap: 10px;
+      height:auto;
+    }
+  }
+  
   .top-left-sales{
     padding-left: 20px;
     padding-top: 20px;
@@ -3304,13 +3314,25 @@
     text-transform:capitalize ;
 
   }
-  .top-left-sales ul{
+  @media (min-width: 607px) {
+    .top-left-sales ul{
     margin-bottom: 0;
     padding: 0;
     list-style: none;
     display: grid;
     grid-template-columns: auto auto auto;
   }
+  }
+  @media (max-width: 606px) {
+    .top-left-sales ul{
+    margin-bottom: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-rows: auto auto auto;
+  }
+  }
+  
 .top-right-sales{
   padding-top: 30px;
   padding-left: 20px;
@@ -3409,16 +3431,43 @@
     color: #141E30;
     text-transform:capitalize ;
   }
-  .payment-method{
-    border-radius: 5px;
-    background-color: #141E30;
-    height:  120px;
-    line-height: 120px;
-    width:220px;
-    text-align: center;
-    margin:10px;
-    margin-left: 0px;
+  @media (max-width: 633px) {
+    .payment-method{
+      border-radius: 5px;
+      background-color: #141E30;
+      height:  100px;
+      line-height: 100px;
+      width:180px;
+      text-align: center;
+      margin:10px;
+      margin-left: 0px;
+    }
   }
+  @media (min-width: 633px) {
+    .payment-method{
+      border-radius: 5px;
+      background-color: #141E30;
+      height:  120px;
+      line-height: 120px;
+      width:220px;
+      text-align: center;
+      margin:10px;
+      margin-left: 0px;
+    }
+  }
+  @media (max-width: 606px) {
+    .payment-method{
+      border-radius: 5px;
+      background-color: #141E30;
+      height:  120px;
+      line-height: 120px;
+      width:inherit;
+      text-align: center;
+      margin:10px;
+      margin-left: 0px;
+    }
+  }
+
   .payment-method:hover{
     cursor: pointer;
   }
@@ -3428,23 +3477,35 @@
     font-weight: normal;
     text-transform:capitalize ;
   }
-  .bottom-sales ul{
-    margin-bottom: 0;
-    padding: 0;
-    overflow: auto;
-  white-space: nowrap;
-    list-style: none;
+  @media (max-width: 848px) {
+    .bottom-sales ul{
+      margin-bottom: 0;
+      padding: 0;
+      overflow: auto;
+      list-style: none;
+    }
   }
-  .bottom-sales ul li{
+  @media (min-width: 848px) {
+    .bottom-sales ul{
+      margin-bottom: 0;
+      padding: 0;
+      overflow: auto;
+      white-space: nowrap;
+      list-style: none;
+    }
+  }
+
+  
+  .bottom-sales ul li:hover{
+    cursor: pointer;
+  }
+  @media (min-width: 576px) {
+    .bottom-sales ul li{
     display: inline-block;
     padding: 10px;
     margin-right: 20px;
     margin-bottom: 20px;
   }
-  .bottom-sales ul li:hover{
-    cursor: pointer;
-  }
-  @media (min-width: 575px) {
   .dashboard-row{
     display: grid;
     grid-template-columns: auto auto;
@@ -3455,6 +3516,11 @@
   }
   }
   @media (max-width: 575px) {
+    .bottom-sales ul li{
+      padding: 10px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
     .dashboard-row{
       display: grid;
       grid-template-rows: auto auto;
@@ -4334,28 +4400,44 @@
     border-radius: 5px;
     color: white;
   }
-  .sales-images{
-   height: 354.5px;
-    width:236px;
-    background-attachment: fixed;
-    background-size: contain;
-    background-repeat: no-repeat;
-    
-    -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
-    -moz-background-size: cover; /* optional for Firefox 3.6 */ 
-    -o-background-size: cover;
+  @media (min-width: 576px) {
+    .sale-image{
+      background-color: #141E30;
+      border-radius: 5px;
+      color: white;
+    }
+    .sales-images{
+      height: 354.5px;
+       width:236px;
+       background-attachment: fixed;
+       background-size: contain;
+       background-repeat: no-repeat;
+       
+       -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+       -moz-background-size: cover; /* optional for Firefox 3.6 */ 
+       -o-background-size: cover;
+     }
   }
-  
-  .sales-images img{
-    height:auto;
-    width: 180px;
-    margin-bottom: 10px;
+  @media (max-width: 575px) {
+    .sale-image{
+      background-color: #141E30;
+      border-radius: 5px;
+      color: white;
+      width: inherit;
+    }
+    .sales-images{
+      height: 754.5px;
+       width:inherit;
+       background-attachment: fixed;
+       background-size: contain;
+       background-repeat: no-repeat;
+       
+       -webkit-background-size: cover; /* for Safari 3.0 - 4.0 , Chrome 1.0 - 3.0 */
+       -moz-background-size: cover; /* optional for Firefox 3.6 */ 
+       -o-background-size: cover;
+     }
   }
-  .sale-image{
-    background-color: #141E30;
-    border-radius: 5px;
-    color: white;
-  }
+ 
   .bodyy{
     margin-top: 45px;
     margin-bottom: 45px;
