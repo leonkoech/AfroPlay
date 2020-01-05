@@ -4695,10 +4695,6 @@
     text-align: center;
   }
   
-  .map {
-    height: 500px;
-  }
-  
   @media screen and (max-width: 991px) {
     .profile-photo .profile-photo-small {
       margin-left: -2px;
