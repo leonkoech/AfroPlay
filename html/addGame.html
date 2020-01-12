@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Add Game - AfroPlay
+    Add Game - Ambience
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -19,16 +19,15 @@
   <link href="../assets/css/main.css" rel="stylesheet" />
 </head>
 
-
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="blue">
       <div class="logo">
         <a href="" class="simple-text logo-mini">
-          AP
+          Am  
         </a>
         <a href="" class="simple-text logo-normal">
-          AfroPlay
+          Ambience
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -94,152 +93,668 @@
       </nav>
       <div class="mygames-header">
       </div>
-      <div class="body2">
+    <div class="newrowp">
+<form  id="regForm" action="">
+         <!-- Circles which indicates the steps of the form: -->
+         <!-- to change title go to main.js line 502 -->
+    <span class="pagetitlee" id="pagetitle">Details</span>
+    <div class="pageindicators"style="text-align:center;margin-top:10px;">
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+        <span class="step"></span>
+
+        </div>   
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
         
-        <div class="newrow">
-         <div class="col-md-8">
-           <div class="card">
-             <div class="card-body">
-               <form>
-                   <div class="appheaderimage">
-                       <span>drag and drop game header or select from files</span>
-                   </div>
-                 <div class="userrow">
-                   <div class="col-md-6 pr-1">
-                     <div class="form-group">
-                       <label>Game title</label>
-                       <input type="text" class="form-control" placeholder="Title" value="">
-                     </div>
-                   </div>
-                   <div class="col-md-6 pl-1">
-                    <div class="form-group">
-                      <label>Changelog</label>
-                      <input type="number" class="form-control" placeholder="version" value="">
-                    </div>
-                  </div>
-                 </div>
-                 <div class="userrow">
-                   <div class="col-md-6 pr-1">
-                       <div class="form-group">
-                         <label>Trailer link</label>
-                         <input type="text" class="form-control" placeholder="Enter the video link of the trailer" value="">
-                       </div>
-                     </div>
-                     <div class="col-md-6 pl-1">
-                       <div class="form-group">
-                         <label>Minimum age</label>
-                         <input type="text" class="form-control" placeholder="age" value="">
-                       </div>
-                     </div>
-                 </div>
-                 <div class="userrow">
-                   <div class="col-md-12">
-                     <div class="form-group">
-                       <label>Game Description</label>
-                       <textarea rows="4" cols="80" class="form-control" placeholder="Type your app description here" value=""></textarea>
-                     </div>
-                   </div>
-                 </div>
-                 <div class="userrow">
-                   <div class="col-md-6 pr-1">
-                     <div class="form-group">
-                       <label class="mylabel">platform</label>
-                           <!-- TO:DO change to selector -->
-                           <select class="form-control" style="margin-top: 10px;">
-                            <option value="Android">Android</option>
-                            <option value="Windows">Windows</option>
-                            <option value="MacOs">MacOs</option>
-                            <option value="Linux">Linux</option>
-                          </select>
+            <div class="newrow" id="detailspage">
+
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
                           
-                         
-                     </div>
-                   </div>
-                   <div class="col-md-3 ">
-                       <div class="form-group">
-                         <label class="mylabel">Type</label>
-                         <select class="form-control" style="margin-top: 10px;">
-                          <option value="">type of game</option>
-                          <option value="paid">paid</option>
-                          <option value="free">free</option>
-                          <option value="free with in app purchases">free with in app purchases</option>
-                          <option value="contains ads">contains ads</option>
-                        </select>
-                                                   
-                       </div>
-                     </div>
-                     <div class="col-md-3 pl-1">
-                      <div class="form-group">
-                        <label class="mylabel">Category</label>
-                        <select class="form-control" style="margin-top: 10px;">
-                         <option value="">select category</option>
-                         <option value="Action">Action</option>
-                         <option value="Adventure">Adventure</option>
-                         <option value="Arcade">Arcade</option>
-                         <option value="Board">Board</option>
-                         <option value="Card">Card</option>
-                         <option value="Casino">Casino</option>
-                         <option value="Casual">Casual</option>
-                         <option value="Educational">Educational</option>
-                         <option value="Music">Music</option>
-                         <option value="Puzzle">Puzzle</option>
-                         <option value="Racing">Racing</option>
-                         <option value="Simulation">Simulation</option>
-                         <option value="Sports">Sports</option>
-                         <option value="Strategy">Strategy</option>
-                         <option value="Trivia">Trivia</option>
-                         <option value="Word">Word</option>
-                        
-                       </select>
-                                                  
+                        <div class="userrow">
+                          <div class="col-md-6 pr-1">
+                            <div class="form-group">
+                              <label>Game title</label>
+                              <input oninput="this.className = 'form-control'" required id="gametitleinput"type="text" class="form-control" placeholder="Title" value="">
+                            </div>
+                          </div>
+                          <div class="col-md-6 pl-1">
+                            <div class="form-group">
+                              <label>Trailer Link</label>
+                              <input oninput="this.className = 'form-control'" required  id="trailerlinkinput" type="text" class="form-control" placeholder="Enter the video link of the trailer" value="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="userrow">
+                          <div class="col-md-5">
+                            <div class="form-group">
+                              <label>Short Description</label>
+                              <textarea oninput="this.className = 'form-control'" style="border-top: 0px;border-left: 0px;border-right: 0px;resize: none;"required rows="4" cols="80" class="form-control" placeholder="Short game description" value=""></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-2 pr-1">
+                            <div class="form-group">
+                              <label>Platforms</label>
+                            </div>
+                            
+                            <div class="checkbox">
+                                <input required type="checkbox">
+                                <span class="checkmark">Android</span><br>
+                                <input required type="checkbox"> 
+                                <span class="checkmark">Windows</span><br>
+                                <input required type="checkbox"> 
+                                <span class="checkmark">Macos</span><br>
+                                <input required type="checkbox"> 
+                                <span class="checkmark">Linux</span>
+                            </div>
+                          
+                          </div>
+                          <div class="col-md-5 pr-1">
+                            <div class="form-group">
+                              <label>Language Support (selct all supported)</label>
+                                  <!-- TO:DO change to selector -->
+                                  <select oninput="this.className = 'form-control'"  id="languages" class="form-control" style="margin-top: 10px;">
+                                    <option value="">Select Languages</option>
+                                    <option value="Afrikanns">Afrikanns</option>
+                                    <option value="Albanian">Albanian</option>
+                                    <option value="Arabic">Arabic</option>
+                                    <option value="Armenian">Armenian</option>
+                                    <option value="Basque">Basque</option>
+                                    <option value="Bengali">Bengali</option>
+                                    <option value="Bulgarian">Bulgarian</option>
+                                    <option value="Catalan">Catalan</option>
+                                    <option value="Cambodian">Cambodian</option>
+                                    <option value="Chinese (Mandarin)">Chinese (Mandarin)</option>
+                                    <option value="Croation">Croation</option>
+                                    <option value="Czech">Czech</option>
+                                    <option value="Danish">Danish</option>
+                                    <option value="Dutch">Dutch</option>
+                                    <option value="English">English</option>
+                                    <option value="Estonian">Estonian</option>
+                                    <option value="Fiji">Fiji</option>
+                                    <option value="Finnish">Finnish</option>
+                                    <option value="French">French</option>
+                                    <option value="Georgian">Georgian</option>
+                                    <option value="German">German</option>
+                                    <option value="Greek">Greek</option>
+                                    <option value="Gujarati">Gujarati</option>
+                                    <option value="Hebrew">Hebrew</option>
+                                    <option value="Hindi">Hindi</option>
+                                    <option value="Hungarian">Hungarian</option>
+                                    <option value="Icelandic">Icelandic</option>
+                                    <option value="Indonesian">Indonesian</option>
+                                    <option value="Irish">Irish</option>
+                                    <option value="Italian">Italian</option>
+                                    <option value="Japanese">Japanese</option>
+                                    <option value="Javanese">Javanese</option>
+                                    <option value="Korean">Korean</option>
+                                    <option value="Latin">Latin</option>
+                                    <option value="Latvian">Latvian</option>
+                                    <option value="Lithuanian">Lithuanian</option>
+                                    <option value="Macedonian">Macedonian</option>
+                                    <option value="Malay">Malay</option>
+                                    <option value="Malayalam">Malayalam</option>
+                                    <option value="Maltese">Maltese</option>
+                                    <option value="Maori">Maori</option>
+                                    <option value="Marathi">Marathi</option>
+                                    <option value="Mongolian">Mongolian</option>
+                                    <option value="Nepali">Nepali</option>
+                                    <option value="Norwegian">Norwegian</option>
+                                    <option value="Persian">Persian</option>
+                                    <option value="Polish">Polish</option>
+                                    <option value="Portuguese">Portuguese</option>
+                                    <option value="Punjabi">Punjabi</option>
+                                    <option value="Quechua">Quechua</option>
+                                    <option value="Romanian">Romanian</option>
+                                    <option value="Russian">Russian</option>
+                                    <option value="Samoan">Samoan</option>
+                                    <option value="Serbian">Serbian</option>
+                                    <option value="Slovak">Slovak</option>
+                                    <option value="Slovenian">Slovenian</option>
+                                    <option value="Spanish">Spanish</option>
+                                    <option value="Swahili">Swahili</option>
+                                    <option value="Swedish ">Swedish </option>
+                                    <option value="Tamil">Tamil</option>
+                                    <option value="Tatar">Tatar</option>
+                                    <option value="Telugu">Telugu</option>
+                                    <option value="Thai">Thai</option>
+                                    <option value="Tibetan">Tibetan</option>
+                                    <option value="Tonga">Tonga</option>
+                                    <option value="Turkish">Turkish</option>
+                                    <option value="Ukranian">Ukranian</option>
+                                    <option value="Urdu">Urdu</option>
+                                    <option value="Uzbek">Uzbek</option>
+                                    <option value="Vietnamese">Vietnamese</option>
+                                    <option value="Welsh">Welsh</option>
+                                    <option value="Xhosa">Xhosa</option>
+                                </select>
+                                
+                                <div class="undertab">
+                                    <p>Selected Languages : <span id="langselect"></span></p>
+                                </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                        <div class="userrow">
+                          <div class="col-md-9">
+                            <div class="form-group">
+                              <label>Long Description</label>
+                              <textarea oninput="this.className = 'form-control'" style="border-top: 0px;border-left: 0px;border-right: 0px;resize: none;"required rows="4" cols="80" class="form-control" placeholder="Long game description" value=""></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-3 pl-1">
+                            <div class="form-group">
+                              <label class="mylabel">Category (all that apply)</label>
+                              <select oninput="this.className = 'form-control'" class="form-control" id="categories" style="margin-top: 10px;">
+                              <option value="">select category</option>
+                              <option value="Action">Action</option>
+                              <option value="Adventure">Adventure</option>
+                              <option value="Arcade">Arcade</option>
+                              <option value="Board">Board</option>
+                              <option value="Card">Card</option>
+                              <option value="Casino">Casino</option>
+                              <option value="Casual">Casual</option>
+                              <option value="Educational">Educational</option>
+                              <option value="Music">Music</option>
+                              <option value="Puzzle">Puzzle</option>
+                              <option value="Racing">Racing</option>
+                              <option value="Simulation">Simulation</option>
+                              <option value="Sports">Sports</option>
+                              <option value="Strategy">Strategy</option>
+                              <option value="Trivia">Trivia</option>
+                              <option value="Word">Word</option>
+                              
+                            </select>
+                              <p>Selected Categories :<span id="catselect"></span></p>                          
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                   </div>
-                
-                               
-               </form>
-               </div>
-             </div>
-           </div>
-           <div class="col-md-4" style="margin-bottom:10px;">
-               <div class="card card-body">
-               <div class="screenshots">
-                   <div class="screenshotlarge">
-                       <span>drag and drop screenshot here or select from computer</span>
-                   </div>
-                   <div class="screenshotsmall">
-                     <ul>
-                         <li>
-                            <span>screenshot</span>
-                         </li>
-                         <li>
-                            <span>screenshot</span>
-                         </li>
-                         <li>
-                            <span>screenshot</span>
-                         </li>
-                         <li>
-                            <span>screenshot</span>
-                           </li>
-                         </li>
-                     </ul>
-                   </div>
-               </div>
-               <div class="appfile">
-                   <span>Drag and drop game file here <br>or select from computer</span>
-               </div>
-               <div class="submitgame">
-                   <a href="./mygames.html">
-                       <div class="bottomGamebtn">
-                         submit game
-                       </div>
-                     </a>
-               </div>
-           </div>
-       </div>
-       </div>
+                  </div>
+                </div>
+        </div>
         
-       </div>
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
+        
+            <div class="newrow" id="termsandrequirements">
+                <div class="col-md-12">
+                <div class="card">
+                <div class="card-body">  
+                    <div class="requirements">
+                      <span >minimum Requirements</span>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Operaiting System</label>
+                            <input oninput="this.className = 'form-control'" id="operatingsystemrecinput" type="text" class="form-control" placeholder="Bit and version" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Hard-drive space</label>
+                            <input oninput="this.className = 'form-control'" id="harddrivespacerecinput" type="text" class="form-control" placeholder="amount of space required" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Processor(AMD)</label>
+                            <input oninput="this.className = 'form-control'" id="processoramdrecinput" type="text" class="form-control" placeholder="AMD processor required" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Processor(intel)</label>
+                            <input oninput="this.className = 'form-control'" id="processorintelrecinput" type="text" class="form-control" placeholder="intel processor required" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Graphics Card(AMD)</label>
+                            <input oninput="this.className = 'form-control'" id="graphicscardamdrecinput"type="text" class="form-control" placeholder="Graphics Card required" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Graphics Card(intel)</label>
+                            <input oninput="this.className = 'form-control'" id="graphicscardintelrecinput"type="text" class="form-control" placeholder="Graphics Card required" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Direct X</label>
+                            <input  oninput="this.className = 'form-control'" id="directxrecinput" type="text" class="form-control" placeholder="AMD processor required" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Online Connection requirements</label>
+                            <input oninput="this.className = 'form-control'" id="onlineconnectionrecinput" type="text" class="form-control" placeholder="Online Connection requirements" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Memory</label>
+                          <input oninput="this.className = 'form-control'" id="memoryrec" type="text" class="form-control" placeholder="memory" value="">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                                  
+                  </div>
+                </div>
+                </div>
+        
+            </div>
+        </div>
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
+        
+            <div class="newrow" id="termsandrequirements">
+                <div class="col-md-12">
+                <div class="card">
+                <div class="card-body">
+                   
+                    
+                    <div class="requirements">
+                      <span >Recommended Requirements</span>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Operaiting System</label>
+                            <input oninput="this.className = 'form-control'" id="operatingsystemrecinput" type="text" class="form-control" placeholder="Bit and version" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Hard-drive space</label>
+                            <input oninput="this.className = 'form-control'" id="harddrivespacerecinput" type="text" class="form-control" placeholder="amount of space required" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Processor(AMD)</label>
+                            <input oninput="this.className = 'form-control'" id="processoramdrecinput" type="text" class="form-control" placeholder="AMD processor required" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Processor(intel)</label>
+                            <input oninput="this.className = 'form-control'" id="processorintelrecinput" type="text" class="form-control" placeholder="intel processor required" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Graphics Card(AMD)</label>
+                            <input oninput="this.className = 'form-control'" id="graphicscardamdrecinput"type="text" class="form-control" placeholder="Graphics Card required" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Graphics Card(intel)</label>
+                            <input oninput="this.className = 'form-control'" id="graphicscardintelrecinput"type="text" class="form-control" placeholder="Graphics Card required" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="userrow">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Direct X</label>
+                            <input  oninput="this.className = 'form-control'" id="directxrecinput" type="text" class="form-control" placeholder="AMD processor required" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>Online Connection requirements</label>
+                            <input oninput="this.className = 'form-control'" id="onlineconnectionrecinput" type="text" class="form-control" placeholder="Online Connection requirements" value="">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label>Memory</label>
+                          <input oninput="this.className = 'form-control'" id="memoryrec" type="text" class="form-control" placeholder="memory" value="">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                                  
+                  </div>
+                </div>
+                </div>
+        
+            </div>
+        </div>
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
+      
+            <div class="newrow" id="Screenshots">
+
+                <div class="col-md-12">
+                <div class="card">
+                  <div class="card-body">
+                    
+                        <span class="minipagetitle">Pictures and videos</span>
+                        <div class="userrow">
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>main picture</label>
+                              <input oninput="this.className = 'form-control'" id="mainpicinput" type="file" class="form-control" placeholder="character image" value="">
+                            </div>
+                          </div> 
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>header Image</label>
+                              <input oninput="this.className = 'form-control'" id="headerimageinput"type="file" class="form-control" placeholder="character image" value="">
+                            </div>
+                          </div> 
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Logo</label>
+                              <input oninput="this.className = 'form-control'" id="logoimageinput"type="file" class="form-control" placeholder="character image" value="">
+                            </div>
+                          </div>  
+                          <div class="col-md-4">
+                            <div class="form-group">
+                              <label>Video Url(a short gif or video of your game)-optional</label>
+                              <input oninput="this.className = 'form-control'" type="text" class="form-control" placeholder="" value="">
+                            </div>
+                          </div>
+                        </div>
+                        <span class="minipagetitle">Screenshots</span>
+                        <div class="userrow">
+                          <div class="col-md-12">
+                              <div class="form-group">
+                                <label>Screenshots</label>
+                                <input id="screenshotsinput" type="file" class="form-control" placeholder="character image" value="">
+                              </div>
+                            </div>  
+                            
+                           
+                        </div>
+                      
+                    </div>
+                  </div>
+                </div>
+                </div>
+        </div>
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
+      
+            <div class="newrow" id="features">
+
+              <div class="col-md-12">
+              <div class="card">
+              <div class="card-body">
+                    <div class="userrow">
+                      <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Upload image</label>
+                            <input oninput="this.className = 'form-control'" type="file" class="form-control" placeholder="character image" value="">
+                          </div>
+                        </div>
+                        <div class="col-md-3">
+                          <div class="form-group">
+                            <label>Character Name</label>
+                            <input oninput="this.className = 'form-control'" type="text" class="form-control" placeholder="character name" value="">
+                          </div>
+                        </div>
+                    </div>
+                        
+                          <div class="userrow">
+                            <div class="col-md-9">
+                          <div class="form-group">
+                            <label>Description</label>
+                            <textarea oninput="this.className = 'form-control'" style="border-top: 0px;border-left: 0px;border-right: 0px;resize: none;"required rows="4" cols="80" class="form-control" placeholder="Character Description" value=""></textarea>
+                          </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="prevbtn" >
+                              <p>add another</p>
+                          </div>
+                            </div>
+                    </div>
+                    <div class="characters">
+                      <ul>
+                        <li>
+                          <a href="editcharacter.html">
+                            <div class="removecharacter">
+                            <img class="deleteme" src="../assets/img/delete.png">
+                          </div>
+                          <div class="characterimagediv"> 
+                            <img class="characterimage" src="../assets/dummyImages/character1.png">
+                          </div>
+                          
+                          <span>Character Name</span>
+                          <p>Lorem ipsum is placeholder text commonly used in the
+                             graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                          </a>
+                          
+                        </li>
+                        <li>
+                          <a href="editcharacter.html">
+                            <div class="removecharacter">
+                            <img class="deleteme" src="../assets/img/delete.png">
+                          </div>
+                          <div class="characterimagediv"> 
+                            <img class="characterimage" src="../assets/dummyImages/character5.png">
+                          </div>
+                          
+                          <span>Character Name</span>
+                          <p>Lorem ipsum is placeholder text commonly used in the
+                             graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                       
+                          </a>
+                           </li>
+                        <li>
+                          <a href="editcharacter.html">
+                             <div class="removecharacter">
+                            <img class="deleteme" src="../assets/img/delete.png">
+                          </div>
+                          <div class="characterimagediv"> 
+                            <img class="characterimage" src="../assets/dummyImages/character4.png">
+                          </div>
+                          
+                          <span>Character Name</span>
+                          <p>Lorem ipsum is placeholder text commonly used in the
+                             graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                        
+                          </a>
+                         </li>
+                        <li>
+                          <a href="editcharacter.html">
+                             <div class="removecharacter">
+                            <img class="deleteme" src="../assets/img/delete.png">
+                          </div>
+                          <div class="characterimagediv"> 
+                            <img class="characterimage" src="../assets/dummyImages/character3.png">
+                          </div>
+                          
+                          <span>Character Name</span>
+                          <p>Lorem ipsum is placeholder text commonly used in the
+                             graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                        </li>
+                       
+                          </a>
+                          <li>
+                            <a href="editcharacter.html">
+                            <div class="removecharacter">
+                            <img class="deleteme" src="../assets/img/delete.png">
+                          </div>
+                          <div class="characterimagediv"> 
+                            <img class="characterimage" src="../assets/dummyImages/character2.png">
+                          </div>
+                          
+                          <span>Character Name</span>
+                          <p>Lorem ipsum is placeholder text commonly used in the
+                             graphic, print, and publishing industries for previewing layouts and visual mockups.</p>
+                        
+                            </a>
+                          </li>
+                      </ul>
+                    </div>
+                                
+                </div>
+              </div>
+              </div>
+              </div>
+        </div>
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
+            <div class="newrow" id="uploadfile">
+
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                          
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Terms and Conditions</label>
+                              <input oninput="this.className = 'form-control'" id="termsandconditioninput"rows="4" cols="90" class="form-control" placeholder="Terms and conditions" value=""></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                          <div class="form-group">
+                            <label>Upload File</label>
+                            <input oninput="this.className = 'form-control'" id="uploadfileinput" type="file" class="form-control" placeholder="character image" value="">
+                          </div>
+                        </div> 
+                        <div class="userrow">
+                          <div class="col-md-4">
+                            
+                          </div> 
+                          <div class="col-md-4">
+                            
+                          </div> 
+                          <div class="col-md-4">
+                            
+                          </div> 
+                        </div>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+        <div class="tab">
+
+
+        <div class="newrow" id="addPrice">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                    <div class="userrow">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label >Price</label>
+                          <select oninput="this.className = 'form-control'" class="form-control" id="pricespecialization" style="margin-top: 10px;">
+                          <option value="">select game price</option>
+                          <option value="free">Free</option>
+                          <option value="paid">Paid</option>
+                          <option value="AppPurchases">Free with in App purchases</option>                       
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label >Ads</label>
+                          <select oninput="this.className = 'form-control'" class="form-control" id="adspecialization" style="margin-top: 10px;">
+                          <option value="">does your game contain ads</option>
+                          <option value="ads">Yes</option>
+                          <option value="noads">No</option>
+                          </select>
+                        </div>
+                          </div> 
+                    </div> 
+                    <br>
+                    <div class="userrow">
+                      <div class="col-md-12">
+                        <div id="myslider" class="slidecontainer" >
+                          <label >Price of your game (from 1$ to 100$)</label>
+                          <br>
+                            <input type="range" min="1" max="100" value="30" class="slider" id="myRange">
+                            <p>Value: <span id="demo"></span>$</p>
+                          </div>
+                      </div>
+                    </div>
+                    </div>
+                    <br>
+                 </div>               
+                </div>
+              </div>
+
+        </div>
+        <div class="tab">
+            <!-- Circles which indicates the steps of the form: -->
+        
+            <div class="newrow" id="success">
+
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="main-content-sucesspage">
+                        <div class="top-success">
+                            <img  src="../assets/img/bluecheck.png">
+                        </div>
+                        <div class="bottom-success">
+                            <p>Success</p> 
+                            <span>your game has been uploaded successfully</span> 
+                        </div>
+                      </div>
+                        </div>
+                        
+                    </div>
+                  </div>
+              </div>
+        </div>
+        
+        <div class="userrow">
+            <div class="col-md-3 ">
+              
+                <button class="prevbtn" type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+
+            
+          </div>
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-3 ">
+               
+                  <button class="nxtbtn" type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+
+              </div>
+            </div>
+        
+
+        
+        
+        </form>
+    </div>
+      
+   
+                 
      <footer class="footer">
         <div class=" container-fluid ">
           <nav>
@@ -270,7 +785,7 @@
             &copy; <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
             </script>
-             <a href="" target="_blank"></a>AfroPlay<a href="" target="_blank"></a>.
+             <a href="" target="_blank"></a>Ambience<a href="" target="_blank"></a>.
           </div>
         </div>
       </footer>
@@ -281,11 +796,18 @@
   <script src="../assets/js/core/popper.min.js"></script>
   <script src="../assets/js/core/bootstrap.min.js"></script>
   <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+<script>
 
+  var slider = document.getElementById("myRange");
+  var output = document.getElementById("demo");
+  output.innerHTML = slider.value;
+  
+  slider.oninput = function() {
+    output.innerHTML = this.value;
+  }
+  </script>
 </html>

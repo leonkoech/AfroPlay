@@ -8,7 +8,7 @@
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Master - Ambience
+    Edit Character - Ambience
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -32,27 +32,28 @@
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
+        
         <ul class="nav">
-          <li id="sidebtndashboard" onclick="sidechange(1)" >
-            <a>
+          <li>
+            <a href="./dashboard.html">
               <p>Dashboard</p>
             </a>
           </li>
-          <li id="sidebtnmygames"  onclick="sidechange(2)" >
-            <a >
+          <li  class="active ">
+            <a href="./mygames.html">
               <p>My Games</p>
             </a>
           </li>
-          <li id="sidebtnsales"  onclick="sidechange(3)">
-            <a >
+          <li>
+            <a href="./sales.html">
               <p>Sales</p>
             </a>
-          </li >
-         <li id="sidebtneditprofile" onclick="sidechange(4)">
-           <a  >
-          <p>Edit profile</p>
-          </a>
-         </li>
+          </li>
+          <li>
+            <a href="./user.html">
+           <p>Edit profile</p>
+           </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -68,7 +69,7 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Master</a>
+            <a class="navbar-brand" href="#pablo">Characters</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -77,16 +78,6 @@
           </button>
           
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
-                </div>
-              </div>
-            </form>
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -103,10 +94,71 @@
       </nav>
       <div class="mygames-header">
       </div>
-      <!-- body   for master -->
-   
-     <!-- end of body master -->
-      <footer class="footer">
+        
+     
+       
+      <div class="newrow" id="features">
+        
+        <div class="col-md-12">
+        <div class="card">
+        <div class="card-body">
+            <div>
+                <h3 class="charactertitle">Edit Character</h3>
+            </div>
+            <form>
+                 <div class="userrow">
+                <div class="col-md-6">
+                    <div class="editCharacterImage">
+                        <img src="../assets/dummyImages/character4.png">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="userrow">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Character Name</label>
+                              <input oninput="this.className = 'form-control'" type="text" class="form-control" placeholder="character name" value="">
+                            </div>
+                          </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                              <label>Upload Character Image</label>
+                              <input oninput="this.className = 'form-control'" type="file" class="form-control" placeholder="character image" value="">
+                            </div>
+                          </div>
+                    </div>
+                </div>
+              </div>
+                  
+                      <div class="col-md-12">
+                    <div class="form-group">
+                      <label>Description</label>
+                      <textarea oninput="this.className = 'form-control'" style="border-top: 0px;border-left: 0px;border-right: 0px;resize: none;"required rows="4" cols="80" class="form-control" placeholder="Character Description" value=""></textarea>
+                    </div>
+                   
+              </div>
+              <div class="userrow">
+                  <div class="col-md-9">
+
+                  </div>
+                  <div class="col-md-3">
+                       <button class="nxtbtn" type="submit">
+                    submit
+                        </button>
+                  </div>
+                 
+              </div>
+              
+            </form>
+             
+        
+                          
+          </div>
+        </div>
+        </div>
+        </div>
+                
+     <footer class="footer">
         <div class=" container-fluid ">
           <nav>
             <ul>
@@ -151,4 +203,5 @@
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

@@ -355,7 +355,347 @@ function hexToRGB(hex, alpha) {
   }
 }
 
+//if termsnadrequirements is visible make the buttons work as they should
+// hide the pages at the start
 
+var page1  = document.getElementById("detailspage");
+var page2 = document.getElementById("termsandrequirements");
+var page3 = document.getElementById("features");
+var page4 = document.getElementById("Screenshots");
+var page5 = document.getElementById("uploadfile");
+var page7 = document.getElementById("success");
+var minimumreq = document.getElementById("minimum-requirements");
+var recommendedreq = document.getElementById("recommended-requirements");
+  function  checkblank(item,htmllink){
+ if (item==null||item=='') {
+  item.style.backgroundColor="rgb(247, 49, 49)";
+  //change placeholder to 'item cant be blank'
+ }
+ else{
+  location.replace(htmllink);
+ }
+}
+// var gametitle = document.getElementById("gametitleinput");
+// var shortdescription = document.getElementById("shortdescriptionInput");
+// var longdescription = document.getElementById("longdescriptioninput");
+// var trailerlink = document.getElementById("trailerlinkinput");
+// var termsandconditions = document.getElementById("termsandconditioninput");
+// var mainpicture = document.getElementById("mainpicinput");
+// var herderimage = document.getElementById("headerimageinput");
+// var logo = document.getElementById("logoimageinput");
+// var uploadfile = document.getElementById("logoimageinput");
+// var screenshot1 = document.getElementById("screenshot1input");
+// var screenshot2 = document.getElementById("screenshot2input");
+// var screenshot3 = document.getElementById("screenshot3input");
+// var screenshot4 = document.getElementById("screenshot4input");
+// var screenshot5 = document.getElementById("screenshot5input");
+// var minos = document.getElementById("operatingsystemmininput");
+// var minprocessoramd = document.getElementById("processoramdmininput");
+// var minprocessorintel = document.getElementById("processorintelmininput");
+// var mingraphicscardamd = document.getElementById("graphicscardamdmininput");
+// var mingraphicscardnvidia = document.getElementById("graphicscardintelmininput");
+// var minmemory = document.getElementById("memorymin");
+// var minonlinec = document.getElementById("onlineconnectionmininput");
+// var minharddrive = document.getElementById("harddrivespacemininput");
+// var mindirectx = document.getElementById("directxmininput");
+// var recos = document.getElementById("operatingsystemrecinput");
+// var recprocessoramd = document.getElementById("processoramdrecinput");
+// var recprocessorintel = document.getElementById("processorintelrecinput");
+// var recgraphicscardamd = document.getElementById("graphicscardamdrecinput");
+// var recgraphicscardnvidia = document.getElementById("graphicscardintelrecinput");
+// var recmemory = document.getElementById("memoryrec");
+// var reconlinec = document.getElementById("onlineconnectionrecinput");
+// var recharddrive = document.getElementById("harddrivespacerecinput");
+// var recdirectx = document.getElementById("directxrecinput");
+// var ddl = document.getElementById("lanselect");
+//  var selectedValue = ddl.options[ddl.selectedIndex].value;
+// function addgameview(t){
+//   if(t==1){
+//     //display detailspage and make the rest display none
+    
+//     //title,short game description,trailerlink,long game description should not be blank
+//     location.replace('../html/addGame.html');
 
+//   }
+//   if(t==2){
+//     //display termsandrequirements and make the rest invisible
+//     if (selectedValue == "selectcard"){
+//       lanselect.style.backgroundColor="rgb(247, 49, 49)";
+//     }
+//     if (!gametitle.value) {
+//       gametitle.style.border="1px solid rgb(247, 49, 49)"
+//       //change placeholder to 'item cant be blank'
+//      }
+//      if (!shortdescription.value) {
+//       shortdescription.style.backgroundColor="rgb(247, 49, 49)";
+//       //change placeholder to 'item cant be blank'
+//      }
+//      if (!longdescription.value) 
+//      {
+//       longdescription.style.backgroundColor="rgb(247, 49, 49)";
+
+//       //change placeholder to 'item cant be blank'
+//      }
+//      if (!trailerlink.value) 
+//      {
+//       trailerlink.style.backgroundColor="rgb(247, 49, 49)";
+//       //change placeholder to 'item cant be blank'
+//      }
+//     if(gametitle.value && shortdescription.value && longdescription.value && trailerlink.value)
+//     {
+//           location.replace('../html/termsmin.html');
+//     }
+//   }
+//   if(t==2.5){
+//     //display termsandrequirements and make the rest invisible
+//     location.replace('../html/termsrec.html');
+//     //then display recommended requirements and make minimum requirements invisible
+//   }
+//   if(t==3){
+//     //display features and make the rest invisible
+//     location.replace('../html/features.html');
+
+//   }
+//   if(t==4){
+//     //display screenshots and make the rest invisible
+//     location.replace('../html/screenshots.html');
+
+//   }
+//   if(t==5){
+//     //display uploadfile and make the rest invisible
+//     location.replace('../html/uploadfile.html');
+
+//   }
+//   if(t==6){
+//     //display sucess and make the rest invisible
+//     location.replace('../html/success.html');
+//   }
+// }
+// function done(){
+//   location.replace('../html/mygames.html');
+
+// }
+
+var currentTab = 0; // Current tab is set to be the first tab (0)
+showTab(currentTab); // Display the current tab
+
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tab");
+  x[n].style.display = "block";
+  showHeader(n);
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+function showHeader(n){
+var title= document.getElementById('pagetitle');
+if (n==0){
+  title.innerHTML="Details";
+}
+if (n==1) {
+  title.innerHTML="Minimum Requirements";
+}
+if (n==2) {
+  title.innerHTML="Recommended Requirements";
+}
+if (n==3) {
+  title.innerHTML="Screenshots and Pictures";
+}
+if (n==4) {
+  title.innerHTML="Characters";
+}
+if (n==5) {
+  title.innerHTML="Upload File";
+}
+if (n==6) {
+  title.innerHTML="Pricing";
+}
+if (n==7) {
+  title.innerHTML="Success";
+}
+}
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tab");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    //and the location changes
+    location.replace('../html/mygames.html');
+
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y,t,s, i, valid = true;
+  x = document.getElementsByClassName("tab");
+  y = x[currentTab].getElementsByTagName("input");
+  t = x[currentTab].getElementsByTagName("textarea");
+  s = x[currentTab].getElementsByTagName("select");
+
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  for (i = 0; i < t.length; i++) {
+    // If a field is empty...
+    if (t[i].value == "") {
+      // add an "invalid" class to the field:
+      t[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  for (i = 0; i < s.length; i++) {
+    // If a field is empty...
+    if (s[i].value == "") {
+      // add an "invalid" class to the field:
+      s[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
+
+function replaceclass(toreplace,tochange1,tochange2,tochange3){
+  var toreplace, name, arr;
+  name = "active";
+  arr = toreplace.className.split(" ");
+  if (arr.indexOf(name) == -1) {
+    toreplace.className += " " + name;
+  }
+  tochange1.classList.remove("active");
+  tochange2.classList.remove("active");
+  tochange3.classList.remove("active");
+}
+function sidechange(somevar){
+  var dashboardbtn=document.getElementById("sidebtndashboard");
+  var salesbtn=document.getElementById("sidebtnsales");
+  var mygames=document.getElementById("sidebtnmygames");
+  var editprofile=document.getElementById("sidebtneditprofile");
+
+  if(somevar==1){
+    //dashboardbtn
+    replaceclass(dashboardbtn,salesbtn,mygames,editprofile);
+    
+  }
+  if (somevar==2) {
+    //mygames
+    replaceclass(mygames,dashboardbtn,salesbtn,editprofile);
+  }
+  if(somevar==3){
+    //salesbtn
+    replaceclass(salesbtn,dashboardbtn,mygames,editprofile);
+  }
+  
+  if (somevar==4) {
+    //editprofile
+    replaceclass(editprofile,dashboardbtn,salesbtn,mygames);
+  }
+}
+// arguments: reference to select list, callback function (optional)
+function getSelectedOptions(sel, fn) {
+  var opts = [], opt;
+  
+  // loop through options in select list
+  for (var i=0, len=sel.options.length; i<len; i++) {
+      opt = sel.options[i];
+      
+      // check if selected
+      if ( opt.selected ) {
+          // add to array of option elements to return from this function
+          opts.push(opt);
+          
+          // invoke optional callback function if provided
+          if (fn) {
+              fn(opt);
+          }
+      }
+  }
+  
+  // return array containing references to selected option elements
+  return opts;
+}
+// example callback function (selected options passed one by one)
+function callback(opt) {
+  var display = document.getElementById('langselect');
+  display.innerHTML += opt.value + ', ';
+
+}
+function callbackcat(opt) {
+  var display = document.getElementById('catselect');
+  display.innerHTML += opt.value + ', ';
+
+}
+// anonymous function onchange for select list with id languages
+document.getElementById('languages').onchange = function getselected(){
+  // get reference to display textarea
+  var display=document.getElementById("langselect");
+  
+  // callback fn handles selected options
+  getSelectedOptions(this, callback);
+  
+  // remove ', ' at end of string
+ display.innerHTML.slice(0, -2);
+  
+};
+document.getElementById('categories').onchange = function(e){
+  // get reference to display textarea
+  var cats=document.getElementById("catselect");
+  
+  // callback fn handles selected options
+  getSelectedOptions(this, callbackcat);
+  
+  // remove ', ' at end of string
+  cats.innerHTML.slice(0, -2);
+  
+};
+function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
 
 
