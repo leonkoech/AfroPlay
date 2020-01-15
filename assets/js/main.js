@@ -355,126 +355,6 @@ function hexToRGB(hex, alpha) {
   }
 }
 
-//if termsnadrequirements is visible make the buttons work as they should
-// hide the pages at the start
-
-var page1  = document.getElementById("detailspage");
-var page2 = document.getElementById("termsandrequirements");
-var page3 = document.getElementById("features");
-var page4 = document.getElementById("Screenshots");
-var page5 = document.getElementById("uploadfile");
-var page7 = document.getElementById("success");
-var minimumreq = document.getElementById("minimum-requirements");
-var recommendedreq = document.getElementById("recommended-requirements");
-  function  checkblank(item,htmllink){
- if (item==null||item=='') {
-  item.style.backgroundColor="rgb(247, 49, 49)";
-  //change placeholder to 'item cant be blank'
- }
- else{
-  location.replace(htmllink);
- }
-}
-// var gametitle = document.getElementById("gametitleinput");
-// var shortdescription = document.getElementById("shortdescriptionInput");
-// var longdescription = document.getElementById("longdescriptioninput");
-// var trailerlink = document.getElementById("trailerlinkinput");
-// var termsandconditions = document.getElementById("termsandconditioninput");
-// var mainpicture = document.getElementById("mainpicinput");
-// var herderimage = document.getElementById("headerimageinput");
-// var logo = document.getElementById("logoimageinput");
-// var uploadfile = document.getElementById("logoimageinput");
-// var screenshot1 = document.getElementById("screenshot1input");
-// var screenshot2 = document.getElementById("screenshot2input");
-// var screenshot3 = document.getElementById("screenshot3input");
-// var screenshot4 = document.getElementById("screenshot4input");
-// var screenshot5 = document.getElementById("screenshot5input");
-// var minos = document.getElementById("operatingsystemmininput");
-// var minprocessoramd = document.getElementById("processoramdmininput");
-// var minprocessorintel = document.getElementById("processorintelmininput");
-// var mingraphicscardamd = document.getElementById("graphicscardamdmininput");
-// var mingraphicscardnvidia = document.getElementById("graphicscardintelmininput");
-// var minmemory = document.getElementById("memorymin");
-// var minonlinec = document.getElementById("onlineconnectionmininput");
-// var minharddrive = document.getElementById("harddrivespacemininput");
-// var mindirectx = document.getElementById("directxmininput");
-// var recos = document.getElementById("operatingsystemrecinput");
-// var recprocessoramd = document.getElementById("processoramdrecinput");
-// var recprocessorintel = document.getElementById("processorintelrecinput");
-// var recgraphicscardamd = document.getElementById("graphicscardamdrecinput");
-// var recgraphicscardnvidia = document.getElementById("graphicscardintelrecinput");
-// var recmemory = document.getElementById("memoryrec");
-// var reconlinec = document.getElementById("onlineconnectionrecinput");
-// var recharddrive = document.getElementById("harddrivespacerecinput");
-// var recdirectx = document.getElementById("directxrecinput");
-// var ddl = document.getElementById("lanselect");
-//  var selectedValue = ddl.options[ddl.selectedIndex].value;
-// function addgameview(t){
-//   if(t==1){
-//     //display detailspage and make the rest display none
-    
-//     //title,short game description,trailerlink,long game description should not be blank
-//     location.replace('../html/addGame.html');
-
-//   }
-//   if(t==2){
-//     //display termsandrequirements and make the rest invisible
-//     if (selectedValue == "selectcard"){
-//       lanselect.style.backgroundColor="rgb(247, 49, 49)";
-//     }
-//     if (!gametitle.value) {
-//       gametitle.style.border="1px solid rgb(247, 49, 49)"
-//       //change placeholder to 'item cant be blank'
-//      }
-//      if (!shortdescription.value) {
-//       shortdescription.style.backgroundColor="rgb(247, 49, 49)";
-//       //change placeholder to 'item cant be blank'
-//      }
-//      if (!longdescription.value) 
-//      {
-//       longdescription.style.backgroundColor="rgb(247, 49, 49)";
-
-//       //change placeholder to 'item cant be blank'
-//      }
-//      if (!trailerlink.value) 
-//      {
-//       trailerlink.style.backgroundColor="rgb(247, 49, 49)";
-//       //change placeholder to 'item cant be blank'
-//      }
-//     if(gametitle.value && shortdescription.value && longdescription.value && trailerlink.value)
-//     {
-//           location.replace('../html/termsmin.html');
-//     }
-//   }
-//   if(t==2.5){
-//     //display termsandrequirements and make the rest invisible
-//     location.replace('../html/termsrec.html');
-//     //then display recommended requirements and make minimum requirements invisible
-//   }
-//   if(t==3){
-//     //display features and make the rest invisible
-//     location.replace('../html/features.html');
-
-//   }
-//   if(t==4){
-//     //display screenshots and make the rest invisible
-//     location.replace('../html/screenshots.html');
-
-//   }
-//   if(t==5){
-//     //display uploadfile and make the rest invisible
-//     location.replace('../html/uploadfile.html');
-
-//   }
-//   if(t==6){
-//     //display sucess and make the rest invisible
-//     location.replace('../html/success.html');
-//   }
-// }
-// function done(){
-//   location.replace('../html/mygames.html');
-
-// }
 
 var currentTab = 0; // Current tab is set to be the first tab (0)
 showTab(currentTab); // Display the current tab
@@ -500,6 +380,7 @@ function showTab(n) {
 }
 function showHeader(n){
 var title= document.getElementById('pagetitle');
+
 if (n==0){
   title.innerHTML="Details";
 }
@@ -616,24 +497,33 @@ function sidechange(somevar){
   var salesbtn=document.getElementById("sidebtnsales");
   var mygames=document.getElementById("sidebtnmygames");
   var editprofile=document.getElementById("sidebtneditprofile");
-
+  var pageheader=document.getElementById('masterheader');
+  var pagetitle=document.getElementById('mastertitle');
   if(somevar==1){
     //dashboardbtn
     replaceclass(dashboardbtn,salesbtn,mygames,editprofile);
+    pageheader.innerHTML = "Dashboard";
+    pagetitle.innerHTML = "Dashboard - Ambient";
     
   }
   if (somevar==2) {
     //mygames
     replaceclass(mygames,dashboardbtn,salesbtn,editprofile);
+    pageheader.innerHTML = "My Games";
+    pagetitle.innerHTML = "My Games - Ambient";
   }
   if(somevar==3){
     //salesbtn
     replaceclass(salesbtn,dashboardbtn,mygames,editprofile);
+    pageheader.innerHTML = "My Sales";
+    pagetitle.innerHTML = "Sales - Ambient";
   }
   
   if (somevar==4) {
     //editprofile
     replaceclass(editprofile,dashboardbtn,salesbtn,mygames);
+    pageheader.innerHTML = "Edit Profile";
+    pagetitle.innerHTML = "Edit Profile - Ambient";
   }
 }
 // arguments: reference to select list, callback function (optional)
