@@ -77,8 +77,13 @@
           </button>
           
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
+            <a id='topbtn' href="./addGame.html">
+              <div class="topbtn">
+                add game
+              </div>
+            </a>
             <form>
-              <div class="input-group no-border">
+              <div id='topsearchbtn' class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <div class="input-group-append">
                   <div class="input-group-text">
@@ -151,4 +156,13 @@
   <script src="../assets/js/plugins/chartjs.min.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
+<script>
+window.onload = function onloadfunction() { 
+  var topbtn=document.getElementById('topbtn');
+  var topsearch=document.getElementById('topsearchbtn');
+  topbtn.style.visibility = 'hidden';
+    topsearch.style.visibility="hidden";
+  // Function to be executed 
+} 
+</script>
 </html>

@@ -499,11 +499,15 @@ function sidechange(somevar){
   var editprofile=document.getElementById("sidebtneditprofile");
   var pageheader=document.getElementById('masterheader');
   var pagetitle=document.getElementById('mastertitle');
+  var topbtn=document.getElementById('topbtn');
+  var topsearch=document.getElementById('topsearchbtn');
   if(somevar==1){
     //dashboardbtn
     replaceclass(dashboardbtn,salesbtn,mygames,editprofile);
     pageheader.innerHTML = "Dashboard";
     pagetitle.innerHTML = "Dashboard - Ambient";
+    topbtn.style.visibility = 'hidden';
+    topsearch.style.visibility="hidden";
     
   }
   if (somevar==2) {
@@ -511,12 +515,16 @@ function sidechange(somevar){
     replaceclass(mygames,dashboardbtn,salesbtn,editprofile);
     pageheader.innerHTML = "My Games";
     pagetitle.innerHTML = "My Games - Ambient";
+    topbtn.style.visibility = 'visible';
+    topsearch.style.visibility="visible";
   }
   if(somevar==3){
     //salesbtn
     replaceclass(salesbtn,dashboardbtn,mygames,editprofile);
     pageheader.innerHTML = "My Sales";
     pagetitle.innerHTML = "Sales - Ambient";
+    topbtn.style.visibility = 'hidden';
+    topsearch.style.visibility="visible";
   }
   
   if (somevar==4) {
@@ -524,6 +532,8 @@ function sidechange(somevar){
     replaceclass(editprofile,dashboardbtn,salesbtn,mygames);
     pageheader.innerHTML = "Edit Profile";
     pagetitle.innerHTML = "Edit Profile - Ambient";
+    topbtn.style.visibility = 'hidden';
+    topsearch.style.visibility="hidden";
   }
 }
 // arguments: reference to select list, callback function (optional)
